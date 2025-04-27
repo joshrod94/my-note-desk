@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:io'; // To check if we're on Windows
 import 'package:window_size/window_size.dart'; // To control window size
 
-import 'widgets/topbar.dart'; // Importing the topbar widget
-import 'widgets/sidebar.dart'; // Importing the sidebar widget
-import 'widgets/editor.dart'; // Importing the editor widget
+import 'widgets/topbar/topbar.dart'; // Importing the topbar widget
+import 'widgets/sidebar/sidebar.dart'; // Importing the sidebar widget
+import 'widgets/editor/editor.dart'; // Importing the editor widget
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
