@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:io'; // To check if we're on Windows
 import 'package:window_size/window_size.dart'; // To control window size
 
+import 'widgets/topbar.dart'; // Importing the topbar widget
+import 'widgets/sidebar.dart'; // Importing the sidebar widget
+import 'widgets/editor.dart'; // Importing the editor widget
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -35,13 +39,24 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Placeholder for UI Layout',
-          style: TextStyle(fontSize: 24),
-        ),
+    return Scaffold(
+      body: Column(
+        children: [
+          //adding the top bar
+          const TopBar(),
+          Expanded(
+            child: Row(
+              children: [
+                //adding the sidebar
+                const Sidebar(),
+                //adding the editor area
+                const Expanded(child: EditorArea()),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
