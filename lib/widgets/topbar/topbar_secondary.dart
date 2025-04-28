@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'secondary_menus/file_menu.dart'; // Import your FileMenu widget
 
 class TopBarSecondary extends StatelessWidget {
   final String selectedMenu;
@@ -7,15 +8,27 @@ class TopBarSecondary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget content;
+
+    switch (selectedMenu) {
+      case 'File':
+        content = const FileMenu();
+        break;
+      default:
+        content = Center(
+          child: Text(
+            '$selectedMenu options coming soon!',
+            style: const TextStyle(fontSize: 18),
+          ),
+        );
+        break;
+    }
+
     return Container(
-      color: const Color.fromARGB(255, 146, 146, 146),
+      color: Colors.grey[300],
       width: double.infinity,
-      child: Center(
-        child: Text(
-          '$selectedMenu options go here',
-          style: const TextStyle(fontSize: 18),
-        ),
-      ),
+      padding: const EdgeInsets.all(8.0),
+      child: content,
     );
   }
 }
