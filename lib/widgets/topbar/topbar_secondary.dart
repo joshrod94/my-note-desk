@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'secondary_menus/file_menu.dart'; // Import your FileMenu widget
+import 'secondary_menus/file_menu.dart'; // Import File Menu
+import 'secondary_menus/home_menu.dart'; // <-- Import Home Menu too!
 
 class TopBarSecondary extends StatelessWidget {
   final String selectedMenu;
@@ -13,6 +14,9 @@ class TopBarSecondary extends StatelessWidget {
     switch (selectedMenu) {
       case 'File':
         content = const FileMenu();
+        break;
+      case 'Home':
+        content = const HomeMenu(); // <-- Wire HomeMenu correctly
         break;
       default:
         content = Center(
@@ -32,3 +36,4 @@ class TopBarSecondary extends StatelessWidget {
     );
   }
 }
+
